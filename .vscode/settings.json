@@ -1,0 +1,5 @@
+{
+    "cmake.options.statusBarVisibility": "compact",
+    "cmake.enableAutomaticKitScan": true,
+    "git.autofetch": true
+}
