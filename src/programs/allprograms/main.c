@@ -11,7 +11,7 @@
 // The programs are designed to be simple and easy to use, with a focus on demonstrating specific features.
 // The main program serves as a menu for the user to choose which program they want to run.
 // The programs are implemented in separate files and are included in the main program.
-// If the program doesnt compile correctly, then try again
+// If the program doesnt compile correctly, then try again or switch to the compiler program to reset it
 
 //                                                            !IMPORTANT!
 
@@ -159,7 +159,7 @@ int main(int argc, char **argv)
                     printf("Bingo! The number was %d.\n", target);
                 }
 
-                if (guess > 100)
+                if (guess > 100 || guess < 1)
                 {
                     printf("Only numbers between 1 and 100!\n");
                 }
