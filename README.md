@@ -6,8 +6,6 @@
 ### • If the program doesnt compile correctly, then try again
 
 ### Programs:
-• readtext: Reads text and counts characters
+• readchar: Reads text and counts characters
 • calculator: calculator with integers
 
-### programs:
-• readtext: Reads text and counts characters<br /> • calculator: A simple calculator with integers<br /> • guessthenumber: guessing game with numbers between 1 and 100

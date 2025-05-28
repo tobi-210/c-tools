@@ -27,35 +27,36 @@ int main(int argc, char **argv)
 
     printf("\n\033[1mWelcome to C-Tools! 🔧\033[0m\n");
     printf("\nhelpful programs:\n");
-    printf("• readtext: Read text and count characters\n• calculator: A simple calculator with integers\n");
+    printf("• countchars: Reads text and counts characters\n• countwords: Reads text and counts words\n• calculator: A simple calculator with integers\n");
     printf("\ngames:\n");
     printf("• guessthenumber: guessing game with numbers between 1 and 100\n");
     printf("\nPlease choose your program from above: ");
     scanf("%s", decision);
-    while (getchar() != '\n')
-        ; // Clear the input buffer for other programs
+    while (getchar() != '\n'); // Clear the input buffer for other programs
 
     running = 1;
 
     while (running)
     {
 
-        if (strcmp(decision, "readtext") == 0)
+        if (strcmp(decision, "countchars") == 0)
         {
 
-            char text[500];
-            int32_t count = 0;
+            char textchar[500];
+            int32_t countc = 0;
 
-            printf("\nWelcome to the read text program!👋\n");
+            printf("\nWelcome to the count characters program!👋\n");
 
             printf("Insert your text here: ");
-            fgets(text, sizeof(text), stdin);
+            fgets(textchar, sizeof(textchar), stdin);
 
-            readtext(text, &count);
+            countchar(textchar, &countc);
 
-            printf("Your text has %d characters.\n", count);
+            printf("Your text has %d characters.\n", countc);
 
             printf("Goodbye! 👋\n");
+
+            while (getchar() != '\n');
 
             running = 0; // exit the loop after running the readtext program correctly
         }
@@ -70,6 +71,8 @@ int main(int argc, char **argv)
 
             printf("\nWould you like to add, subtract, divide or multiply two numbers?: ");
             scanf("%s", decisioncalculator);
+
+            while (getchar() != '\n');
 
             if (strcmp(decisioncalculator, "add") == 0)
             {
@@ -168,6 +171,33 @@ int main(int argc, char **argv)
             printf("Goodbye! 👋\n");
             running = 0;
             clear_terminal();
+
+        } else if((strcmp(decision, "countwords") == 0)) {
+
+             char textwords[500];
+            int32_t countw = 0;
+
+            printf("\nWelcome to the count words program!👋\n");
+
+            printf("Insert your text here: ");
+            fgets(textwords, sizeof(textwords), stdin);
+
+            countwords(textwords, &countw);
+
+            if(countw > 1) {
+
+            printf("Your text has %d words.\n", countw);
+            } else {
+                printf("Your text has %d word.\n", countw);
+            }
+
+            printf("Goodbye! 👋\n");
+
+            running = 0; // exit the loop after running the readtext program correctly
+
+            while (getchar() != '\n');
+
+
         }
         else
         {
@@ -179,6 +209,8 @@ int main(int argc, char **argv)
             running = 1;
         }
 
-        clear_terminal();
+         clear_terminal();
+
     }
+
 }
