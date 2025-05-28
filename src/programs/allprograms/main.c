@@ -32,7 +32,8 @@ int main(int argc, char **argv)
     printf("• guessthenumber: guessing game with numbers between 1 and 100\n");
     printf("\nPlease choose your program from above: ");
     scanf("%s", decision);
-    while (getchar() != '\n'); // Clear the input buffer for other programs
+    while (getchar() != '\n')
+        ; // Clear the input buffer for other programs
 
     running = 1;
 
@@ -56,7 +57,8 @@ int main(int argc, char **argv)
 
             printf("Goodbye! 👋\n");
 
-            while (getchar() != '\n');
+            while (getchar() != '\n')
+                ;
 
             running = 0; // exit the loop after running the readtext program correctly
         }
@@ -72,7 +74,8 @@ int main(int argc, char **argv)
             printf("\nWould you like to add, subtract, divide or multiply two numbers?: ");
             scanf("%s", decisioncalculator);
 
-            while (getchar() != '\n');
+            while (getchar() != '\n')
+                ;
 
             if (strcmp(decisioncalculator, "add") == 0)
             {
@@ -171,10 +174,11 @@ int main(int argc, char **argv)
             printf("Goodbye! 👋\n");
             running = 0;
             clear_terminal();
+        }
+        else if ((strcmp(decision, "countwords") == 0))
+        {
 
-        } else if((strcmp(decision, "countwords") == 0)) {
-
-             char textwords[500];
+            char textwords[500];
             int32_t countw = 0;
 
             printf("\nWelcome to the count words program!👋\n");
@@ -184,10 +188,13 @@ int main(int argc, char **argv)
 
             countwords(textwords, &countw);
 
-            if(countw > 1) {
+            if (countw > 1)
+            {
 
-            printf("Your text has %d words.\n", countw);
-            } else {
+                printf("Your text has %d words.\n", countw);
+            }
+            else
+            {
                 printf("Your text has %d word.\n", countw);
             }
 
@@ -195,9 +202,8 @@ int main(int argc, char **argv)
 
             running = 0; // exit the loop after running the readtext program correctly
 
-            while (getchar() != '\n');
-
-
+            while (getchar() != '\n')
+                ;
         }
         else
         {
@@ -209,8 +215,6 @@ int main(int argc, char **argv)
             running = 1;
         }
 
-         clear_terminal();
-
+        clear_terminal();
     }
-
 }
